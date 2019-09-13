@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { increment } from '../store/actions/actions'
+import { counterActionCreators } from '../store/actions/counter'
 
 export const Counter = (props: any) => {
   console.log(props)
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({ dispatch })
 const mergeProps = (state: State, { dispatch }: { dispatch: Dispatch }) => ({
   counter: state.count,
   increment: () => {
-    dispatch(increment(1))
+    dispatch(counterActionCreators.increment(1))
   },
 })
 
