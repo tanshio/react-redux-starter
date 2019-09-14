@@ -4,7 +4,7 @@ import { ConnectCounter } from '../../Counter'
 export const About = () => {
   return (
     <div>
-      About
+      About!
       <ConnectCounter />
     </div>
   )

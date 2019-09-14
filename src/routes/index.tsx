@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { Home } from '../components/pages/home'
 import { About } from '../components/pages/about'
 import { ConnectCounter } from '../components/Counter'
-import { hot } from 'react-hot-loader/root'
 
 export const Pages = () => {
   return (

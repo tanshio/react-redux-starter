@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <Provider store={initStore()}>
       <div className="App">
         <ConnectCounter />
-        {/*<Pages />*/}
+        <Pages />
       </div>
     </Provider>
   )

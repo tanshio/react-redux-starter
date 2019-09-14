@@ -4,26 +4,29 @@ import { Dispatch } from 'redux'
 import { counterActionCreators } from '../store/counter/actions'
 
 export const Counter = (props: any) => {
+  console.log(props, 'props')
   const [c, setC] = useState(props.counter)
   useEffect(() => {
     setC(props.counter)
   }, [props.counter])
   return (
     <div onClick={props.increment}>
-      counters{props.counter}
+      countersss-{props.counter}
       {c}
     </div>
   )
 }
 
 type State = {
-  count: number
+  counter: {
+    count: number
+  }
 }
 
 const mapStateToProps = (state: State) => state
 const mapDispatchToProps = (dispatch: Dispatch) => ({ dispatch })
 const mergeProps = (state: State, { dispatch }: { dispatch: Dispatch }) => ({
-  counter: state.count,
+  counter: state.counter.count,
   increment: () => {
     dispatch(counterActionCreators.increment(1))
   },
