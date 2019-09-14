@@ -1,4 +1,4 @@
-import { ActionType } from './types'
+import { ActionType } from '../types'
 
 export const INCREMENT_COUNT = 'INCREMENT_COUNT'
 export const DECREMENT_COUNT = 'DECREMENT_COUNT'
@@ -20,4 +20,4 @@ export const counterActionCreators = {
   decrement,
 }
 
-export type Action = ActionType<typeof counterActionCreators>
+export type CounterActionTypes = ActionType<typeof counterActionCreators>
