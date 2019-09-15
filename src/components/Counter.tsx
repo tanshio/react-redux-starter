@@ -1,39 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { connect } from 'react-redux'
-import { Dispatch } from 'redux'
-import { counterActionCreators } from '../store/counter/actions'
+import React, { useCallback, useEffect, useState } from 'react'
 
-export const Counter = (props: any) => {
-  console.log(props, 'props')
+export type CounterProps = {
+  counter: number
+  increment: (n: number) => void
+}
+
+export const Counter = React.memo((props: CounterProps) => {
   const [c, setC] = useState(props.counter)
   useEffect(() => {
     setC(props.counter)
   }, [props.counter])
+
+  const increment = useCallback(() => {
+    setC(1)
+    props.increment(1)
+  }, [props])
+
   return (
-    <div onClick={props.increment}>
-      countersss-{props.counter}
+    <div onClick={increment}>
+      counterss-{props.counter}
       {c}
     </div>
   )
-}
+})
 
-type State = {
+export type CounterState = {
   counter: {
     count: number
   }
 }
-
-const mapStateToProps = (state: State) => state
-const mapDispatchToProps = (dispatch: Dispatch) => ({ dispatch })
-const mergeProps = (state: State, { dispatch }: { dispatch: Dispatch }) => ({
-  counter: state.counter.count,
-  increment: () => {
-    dispatch(counterActionCreators.increment(1))
-  },
-})
-
-export const ConnectCounter = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-  mergeProps
-)(Counter)

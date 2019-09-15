@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
-import { Home } from '../components/pages/home'
-import { About } from '../components/pages/about'
-import { ConnectCounter } from '../components/Counter'
+import { Home } from '../components/pages/Home'
+import { About } from '../components/pages/About'
+import { CounterContainer } from '../containers/parts/Counter'
 
 export const Pages = () => {
   return (
@@ -17,8 +17,8 @@ export const Pages = () => {
           </li>
         </ul>
       </nav>
-      <ConnectCounter />
-      <ConnectCounter />
+      <CounterContainer />
+      <CounterContainer />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />

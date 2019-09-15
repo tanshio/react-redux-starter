@@ -1,19 +1,16 @@
 import { hot } from 'react-hot-loader/root'
 import React from 'react'
 import './App.css'
-import { Provider } from 'react-redux'
-import { initStore } from './store'
+
 import { Pages } from './routes'
-import { ConnectCounter } from './components/Counter'
+import { CounterContainer } from './containers/parts/Counter'
 
 const App: React.FC = () => {
   return (
-    <Provider store={initStore()}>
-      <div className="App">
-        <ConnectCounter />
-        <Pages />
-      </div>
-    </Provider>
+    <div className="App">
+      <CounterContainer />
+      <Pages />
+    </div>
   )
 }
 

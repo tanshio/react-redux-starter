@@ -1,11 +1,11 @@
 import React from 'react'
-import { ConnectCounter } from '../../Counter'
+import { CounterContainer } from '../../../containers/parts/Counter'
 
 export const About = () => {
   return (
     <div>
       About!
-      <ConnectCounter />
+      <CounterContainer />
     </div>
   )
 }
