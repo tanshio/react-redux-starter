@@ -1,12 +1,14 @@
 import React from 'react'
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom'
 import { Home } from '../components/pages/Home'
 import { About } from '../components/pages/About'
 import { CounterContainer } from '../containers/parts/Counter'
+import { ConnectedRouter } from 'connected-react-router'
+import { history } from '../store'
 
 export const Pages = () => {
   return (
-    <Router>
+    <ConnectedRouter history={history}>
       <nav>
         <ul>
           <li>
@@ -23,6 +25,6 @@ export const Pages = () => {
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
       </Switch>
-    </Router>
+    </ConnectedRouter>
   )
 }

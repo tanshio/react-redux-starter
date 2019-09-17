@@ -1,4 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react'
+import styled from 'styled-components'
+
+const CounterWrapper = styled.div`
+  background-color: #ccc;
+`
 
 export type CounterProps = {
   counter: number
@@ -17,10 +22,10 @@ export const Counter = React.memo((props: CounterProps) => {
   }, [props])
 
   return (
-    <div onClick={increment}>
-      counterss-{props.counter}
+    <CounterWrapper onClick={increment}>
+      counter-{props.counter}
       {c}
-    </div>
+    </CounterWrapper>
   )
 })
 
