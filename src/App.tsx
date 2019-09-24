@@ -4,11 +4,13 @@ import './App.css'
 
 import { Pages } from './routes'
 import { CounterContainer } from './containers/parts/Counter'
+import { TodoContainer } from './containers/parts/Todos'
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <CounterContainer />
+      <TodoContainer />
       <Pages />
     </div>
   )

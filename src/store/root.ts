@@ -2,9 +2,11 @@ import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
 import { History } from 'history'
 import { counter } from './counter/reducers'
+import { todos } from './todos/reducers'
 
-const reducers = {
+export const reducers = {
   counter,
+  todos,
 }
 
 export const rootReducers = (history: History) =>

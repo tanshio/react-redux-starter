@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux'
-import { counterActionCreators } from '../../../store/counter/actions'
+import { todoActionCreators } from '../../../store/todos/actions'
 import { connect } from 'react-redux'
-import { Counter, CounterProps } from '../../../components/Counter'
+import { Todos, TodosProps } from '../../../components/Todos'
 import { State } from '../../../store'
 
 const mapStateToProps = (state: State) => state
@@ -9,15 +9,15 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({ dispatch })
 const mergeProps = (
   state: State,
   { dispatch }: { dispatch: Dispatch }
-): CounterProps => ({
-  counter: state.counter.count,
-  increment: () => {
-    dispatch(counterActionCreators.increment(1))
+): TodosProps => ({
+  todos: state.todos.todos,
+  onRemove: (index) => {
+    dispatch(todoActionCreators.deleteTodo(index))
   },
 })
 
-export const CounterContainer = connect(
+export const TodoContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps
-)(Counter)
+)(Todos)

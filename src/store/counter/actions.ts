@@ -1,17 +1,18 @@
 import { ActionType } from '../types'
+import { CounterState } from './reducers'
 
-export const INCREMENT_COUNT = 'INCREMENT_COUNT'
-export const DECREMENT_COUNT = 'DECREMENT_COUNT'
+export const COUNT_INCREMENT = 'COUNT_INCREMENT'
+export const COUNT_DECREMENT = 'COUNT_DECREMENT'
 
-const increment = (payload: number) =>
+const increment = (payload: CounterState['count']) =>
   ({
-    type: INCREMENT_COUNT,
+    type: COUNT_INCREMENT,
     payload,
   } as const)
 
-const decrement = (payload: number) =>
+const decrement = (payload: CounterState['count']) =>
   ({
-    type: DECREMENT_COUNT,
+    type: COUNT_DECREMENT,
     payload,
   } as const)
 

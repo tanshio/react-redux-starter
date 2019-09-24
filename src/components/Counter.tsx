@@ -28,9 +28,3 @@ export const Counter = React.memo((props: CounterProps) => {
     </CounterWrapper>
   )
 })
-
-export type CounterState = {
-  counter: {
-    count: number
-  }
-}

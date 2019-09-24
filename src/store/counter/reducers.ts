@@ -1,18 +1,21 @@
 import produce from 'immer'
 import { CounterActionTypes } from './actions'
-import { DECREMENT_COUNT, INCREMENT_COUNT } from './actions'
+import { COUNT_DECREMENT, COUNT_INCREMENT } from './actions'
 
-type State = {
+export type CounterState = {
   count: number
 }
 
 export const counter = produce(
-  (draft: State = { count: 0 }, action: CounterActionTypes): State => {
+  (
+    draft: CounterState = { count: 0 },
+    action: CounterActionTypes
+  ): CounterState => {
     switch (action.type) {
-      case INCREMENT_COUNT:
+      case COUNT_INCREMENT:
         draft.count = draft.count + action.payload
         return draft
-      case DECREMENT_COUNT:
+      case COUNT_DECREMENT:
         draft.count = draft.count - action.payload
         return draft
       default:
