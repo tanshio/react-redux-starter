@@ -18,6 +18,10 @@
   "devDependencies": {
     "@babel/core": "7.5.5",
     "@hot-loader/react-dom": "16.9.0",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
     "@svgr/webpack": "4.3.2",
     "@types/jest": "24.0.18",
     "@types/node": "^12.7.5",
@@ -85,7 +89,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "browserslist": {
     "production": [
