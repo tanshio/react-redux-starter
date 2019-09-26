@@ -8,6 +8,7 @@ const CounterWrapper = styled.div`
 export type CounterProps = {
   counter: number
   increment: (n: number) => void
+  sync?: boolean
 }
 
 export const Counter = React.memo((props: CounterProps) => {
@@ -17,9 +18,9 @@ export const Counter = React.memo((props: CounterProps) => {
   }, [props.counter])
 
   const increment = useCallback(() => {
-    setC(1)
+    setC(c + 1)
     props.increment(1)
-  }, [props])
+  }, [c, props])
 
   return (
     <CounterWrapper onClick={increment}>

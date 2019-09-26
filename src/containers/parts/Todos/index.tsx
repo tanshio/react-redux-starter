@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux'
 import { todoActionCreators } from '../../../store/todos/actions'
 import { connect } from 'react-redux'
-import { Todos, TodosProps } from '../../../components/Todos'
+import { Todos, TodosProps } from '../../../components/parts/Todos'
 import { State } from '../../../store'
 
 const mapStateToProps = (state: State) => state

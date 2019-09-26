@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux'
 import { counterActionCreators } from '../../../store/counter/actions'
 import { connect } from 'react-redux'
-import { Counter, CounterProps } from '../../../components/Counter'
+import { Counter, CounterProps } from '../../../components/parts/Counter'
 import { State } from '../../../store'
 
 const mapStateToProps = (state: State) => state
