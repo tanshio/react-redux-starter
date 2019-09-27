@@ -1,21 +1,22 @@
 module.exports = ({ config, mode }) => {
   config.module.rules.push({
-    test: /\.(ts|tsx)$/,
+    test: /\.(js|ts|tsx)$/,
+    exclude: /node_modules/,
     use: [
-      // require.resolve('ts-loader'),
-      {
-        loader: require.resolve('react-docgen-typescript-loader'),
-      },
-      {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
-        options: { parser: 'typescript' },
-      },
       {
         loader: require.resolve('babel-loader'),
         options: {
           presets: [['react-app', { flow: false, typescript: true }]],
         },
       },
+      // require.resolve('ts-loader'),
+      {
+        loader: require.resolve('react-docgen-typescript-loader'),
+      },
+      // {
+      //   loader: require.resolve('@storybook/addon-storysource/loader'),
+      //   options: { parser: 'typescript' },
+      // },
       // {
       //   loader: require.resolve('react-docgen-typescript-loader'),
       // },

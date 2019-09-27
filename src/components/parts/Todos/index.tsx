@@ -8,16 +8,16 @@ const TodoContainer = styled.div`
 
 const TodoButton = styled.button``
 
-interface TodoProps {
+type TodoProps = {
   title: string
 }
 
-interface TodoItemProps {
+type TodoItemProps = {
   index: number
   onRemove: (index: number) => void
 }
 
-export interface TodosProps {
+export type TodosProps = {
   todos: TodoProps[]
   onRemove: (index: number) => void
 }

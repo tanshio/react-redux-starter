@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { memo, useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const CounterWrapper = styled.div`
@@ -11,7 +11,7 @@ export type CounterProps = {
   sync?: boolean
 }
 
-export const Counter = React.memo((props: CounterProps) => {
+export const Counter = (props: CounterProps) => {
   const [c, setC] = useState(props.counter)
   useEffect(() => {
     setC(props.counter)
@@ -28,4 +28,6 @@ export const Counter = React.memo((props: CounterProps) => {
       {c}
     </CounterWrapper>
   )
-})
+}
+
+export default memo(Counter)

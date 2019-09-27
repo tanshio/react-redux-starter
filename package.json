@@ -18,8 +18,10 @@
   "devDependencies": {
     "@babel/core": "7.5.5",
     "@hot-loader/react-dom": "16.9.0",
+    "@storybook/addon-a11y": "^5.2.1",
     "@storybook/addon-actions": "^5.2.1",
     "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-docs": "^5.2.1",
     "@storybook/addon-info": "^5.2.1",
     "@storybook/addon-knobs": "^5.2.1",
     "@storybook/addon-links": "^5.2.1",
@@ -43,6 +45,7 @@
     "@types/webpack-env": "^1.14.0",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
+    "add": "^2.0.6",
     "babel-eslint": "10.0.2",
     "babel-jest": "^24.8.0",
     "babel-loader": "8.0.6",
@@ -96,7 +99,8 @@
     "webpack": "4.39.1",
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "4.3.1"
+    "workbox-webpack-plugin": "4.3.1",
+    "yarn": "^1.17.3"
   },
   "scripts": {
     "start": "node scripts/start.js",
