@@ -6,16 +6,16 @@ const CounterWrapper = styled.div`
 `
 
 export type CounterProps = {
-  counter: number
+  count: number
   increment: (n: number) => void
   sync?: boolean
 }
 
 export const Counter = (props: CounterProps) => {
-  const [c, setC] = useState(props.counter)
+  const [c, setC] = useState(props.count)
   useEffect(() => {
-    setC(props.counter)
-  }, [props.counter])
+    setC(props.count)
+  }, [props.count])
 
   const increment = useCallback(() => {
     setC(c + 1)
@@ -24,7 +24,7 @@ export const Counter = (props: CounterProps) => {
 
   return (
     <CounterWrapper onClick={increment}>
-      counter-{props.counter}
+      counter-{props.count}
       {c}
     </CounterWrapper>
   )

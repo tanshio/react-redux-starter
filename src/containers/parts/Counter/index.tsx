@@ -10,7 +10,7 @@ const mergeProps = (
   state: State,
   { dispatch }: { dispatch: Dispatch }
 ): CounterProps => ({
-  counter: state.counter.count,
+  count: state.counter.count,
   increment: () => {
     dispatch(counterActionCreators.increment(1))
   },
