@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter matches to the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa goJIPt"
+  >
+    counter-22
+  </div>
+</DocumentFragment>
+`;
