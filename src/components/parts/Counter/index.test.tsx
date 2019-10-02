@@ -8,14 +8,14 @@ afterEach(cleanup)
 describe('Counter', () => {
   it('increment', () => {
     const { getByText, getByTestId, container, asFragment } = render(
-      <Counter count={2} increment={() => {}} />
+      <Counter count={2} onIncrement={() => {}} />
     )
     fireEvent.click(getByText(/counter/i))
     expect(getByText(/counter/i)).toHaveTextContent('3')
   })
   it('matches to the snapshot', () => {
     const { getByText, getByTestId, container, asFragment } = render(
-      <Counter count={2} increment={() => {}} />
+      <Counter count={2} onIncrement={() => {}} />
     )
     expect(asFragment()).toMatchSnapshot()
   })
