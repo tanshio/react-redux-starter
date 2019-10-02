@@ -1,6 +1,6 @@
 {
   "name": "playground-redux",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "connected-react-router": "^6.5.2",
@@ -109,6 +109,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
+    "lint": "eslint src --ext='.ts,.tsx,.js'",
+    "tsc": "tsc -p . --noEmit",
+    "prettier": "prettier --write '{src}/**/*.{ts,tsx,js}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

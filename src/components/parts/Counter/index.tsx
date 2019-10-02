@@ -7,7 +7,7 @@ const CounterWrapper = styled.div`
 
 export type CounterProps = {
   count: number
-  increment: (n: number) => void
+  onIncrement: (n: number) => void
   sync?: boolean
 }
 
@@ -19,7 +19,7 @@ export const Counter = (props: CounterProps) => {
 
   const increment = useCallback(() => {
     setC(c + 1)
-    props.increment(1)
+    props.onIncrement(1)
   }, [c, props])
 
   return (
