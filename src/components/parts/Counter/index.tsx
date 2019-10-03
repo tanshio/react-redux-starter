@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react'
+import React, { memo, useCallback, useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 
 const CounterWrapper = styled.div`
@@ -8,24 +8,27 @@ const CounterWrapper = styled.div`
 export type CounterProps = {
   count: number
   onIncrement: (n: number) => void
-  sync?: boolean
 }
 
 export const Counter = (props: CounterProps) => {
-  const [c, setC] = useState(props.count)
+  const [count, setCount] = useState(props.count)
   useEffect(() => {
-    setC(props.count)
+    setCount(props.count)
   }, [props.count])
 
   const increment = useCallback(() => {
-    setC(c + 1)
+    setCount(count + 1)
     props.onIncrement(1)
-  }, [c, props])
+  }, [count, props])
+
+  const yen = useMemo(() => {
+    return `${count * 1000}円`
+  }, [count])
 
   return (
     <CounterWrapper onClick={increment}>
       counter-{props.count}
-      {c}
+      {count}-{yen}
     </CounterWrapper>
   )
 }
