@@ -16,7 +16,7 @@ export const Counter = (props: CounterProps) => {
     setCount(props.count)
   }, [props.count])
 
-  const increment = useCallback(() => {
+  const handleClick = useCallback(() => {
     setCount(count + 1)
     props.onIncrement(1)
   }, [count, props])
@@ -26,7 +26,7 @@ export const Counter = (props: CounterProps) => {
   }, [count])
 
   return (
-    <CounterWrapper onClick={increment}>
+    <CounterWrapper onClick={handleClick}>
       counter-{props.count}
       {count}-{yen}
     </CounterWrapper>

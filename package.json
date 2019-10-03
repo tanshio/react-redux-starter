@@ -113,7 +113,8 @@
     "tsc": "tsc -p . --noEmit",
     "prettier": "prettier --write '{src}/**/*.{ts,tsx,js}'",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "gen:component": "npx hygen component new"
   },
   "browserslist": {
     "production": [

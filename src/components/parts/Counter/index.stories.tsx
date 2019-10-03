@@ -15,11 +15,11 @@ export default {
 
 export const Primary = () => {
   const [count, setCount] = useState(1)
-  const increment = () => {
+  const handleTest = () => {
     setCount(count + 1)
     action('onIncrement')(count + 1)
   }
-  return <Counter count={count} onIncrement={increment} />
+  return <Counter count={count} onIncrement={handleTest} />
 }
 
 export const Secondary = () => (
