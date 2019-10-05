@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 import { Counter } from './'
 import { withA11y } from '@storybook/addon-a11y'
 

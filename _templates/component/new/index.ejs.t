@@ -1,44 +1,42 @@
 ---
-to: src/components/<%= Directory %>/<%= h.inflection.camelize(Name) %>/index.tsx
+to: src/components/atomic/<%= Directory %>/<%= h.inflection.camelize(Name) %>/index.tsx
 ---
 <%
- LowerCase = Name.toLowerCase()
- UpperCase = Name.toUpperCase()
- Capitalize = h.inflection.camelize(Name)
+ UpperCamelCase = h.inflection.camelize(Name)
+ LowerCamelCase = h.inflection.camelize(Name, true)
 %>import React, { memo, useCallback, useEffect, useState, useMemo } from 'react'
 import styled from 'styled-components'
 
-const <%= Capitalize %>Wrapper = styled.div`
+const <%= UpperCamelCase %>Wrapper = styled.div`
   background-color: #ccc;
 `
 
-export type <%= Capitalize %>Props = {
-  <%= LowerCase %>: number
+export type <%= UpperCamelCase %>Props = {
+  <%= LowerCamelCase %>: number
   onIncrement: (n: number) => void
 }
 
-export const <%= Name %> = (props: <%= Name %>Props) => {
-  const [<%= LowerCase %>, set<%= Capitalize %>] = useState(props.<%= LowerCase %>)
+export const <%= UpperCamelCase %> = (props: <%= UpperCamelCase %>Props) => {
+  const [<%= LowerCamelCase %>, set<%= UpperCamelCase %>] = useState(props.<%= LowerCamelCase %>)
   useEffect(() => {
-    set<%= Capitalize %>(props.<%= LowerCase %>)
-  }, [props.<%= LowerCase %>])
+    set<%= UpperCamelCase %>(props.<%= LowerCamelCase %>)
+  }, [props.<%= LowerCamelCase %>])
 
   const handleClick = useCallback(() => {
-    set<%= Capitalize %>(<%= LowerCase %> + 1)
+    set<%= UpperCamelCase %>(<%= LowerCamelCase %> + 1)
     props.onIncrement(1)
-  }, [<%= LowerCase %>, props])
+  }, [<%= LowerCamelCase %>, props])
 
   const yen = useMemo(() => {
-    return `${<%= LowerCase %> * 1000}円`
-  }, [<%= LowerCase %>])
+    return `${<%= LowerCamelCase %> * 1000}円`
+  }, [<%= LowerCamelCase %>])
 
   return (
-    <<%= Name %>Wrapper onClick={handleClick}>
-      <%= LowerCase %>-{props.<%= LowerCase %>}
-      {<%= LowerCase %>}-{yen}
-    </<%= Name %>Wrapper>
+    <<%= UpperCamelCase %>Wrapper onClick={handleClick}>
+      <%= LowerCamelCase %>-{props.<%= LowerCamelCase %>}
+      {<%= LowerCamelCase %>}-{yen}
+    </<%= UpperCamelCase %>Wrapper>
   )
 }
 
-export default memo(<%= Name %>)
-
+export default memo(<%= UpperCamelCase %>)
