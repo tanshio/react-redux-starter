@@ -5,7 +5,7 @@ exports[`Counter matches to the snapshot 1`] = `
   <div
     class="sc-bdVaJa goJIPt"
   >
-    counter-22
+    counter-22-2000円
   </div>
 </DocumentFragment>
 `;
