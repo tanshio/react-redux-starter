@@ -1,6 +1,5 @@
 import { hot } from 'react-hot-loader/root'
 import React from 'react'
-import './App.css'
 
 import { Pages } from './routes'
 import { CounterContainer } from './containers/parts/Counter'
