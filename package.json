@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "connected-react-router": "^6.5.2",
-    "immer": "^4.0.0",
+    "immer": "^8.0.1",
     "react": "^16.9.0",
     "react-app-polyfill": "^1.0.2",
     "react-dev-utils": "^9.0.3",
